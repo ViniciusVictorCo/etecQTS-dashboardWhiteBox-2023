@@ -15,7 +15,7 @@ namespace app;
 
         // CONSTRUTOR
 
-        public function __construct($nomeUsuario, $idadeUsuario, $pesoUsuario,  $alturaUsuario) {
+        public function __construct($nomeUsuario, $idadeUsuario, $pesoUsuario,  $alturaUsuario, $categoriaImc, $imcUsuario) {
 
             $this->nomeUsuario = $nomeUsuario;
             $this->idadeUsuario = $idadeUsuario;
@@ -30,7 +30,7 @@ namespace app;
 
         public function calcularImc() {
 
-            return $this->imcUsuario = $this->pesoUsuario / ($this->alturaUsuario * $this->alturaUsuario);
+            return number_format($this->imcUsuario = $this->pesoUsuario / pow($this->alturaUsuario ,2), 2);
 
         }
     
@@ -91,18 +91,18 @@ namespace app;
 
         // MÉTODOS SETTERS
 
-        public function setNomeUsuario($nomeUsuario){
-            $this->nomeUsuario = $nomeUsuario;
-        }
-        public function setIdadeUsuario($idadeUsuario){
-            $this->idadeUsuario = $idadeUsuario;
-        }
-        public function setImcUsuario($pesoUsuario, $alturaUsuario){
-            $this->pesoUsuario = $pesoUsuario;
-            $this->alturaUsuario = $alturaUsuario;
-            $this->imcUsuario = $this->calcularImc();
-            $this->categoriaImc = $this->categoriaImc();
-        }
+        // public function setNomeUsuario($nomeUsuario){
+        //     $this->nomeUsuario = $nomeUsuario;
+        // }
+        // public function setIdadeUsuario($idadeUsuario){
+        //     $this->idadeUsuario = $idadeUsuario;
+        // }
+        // public function setImcUsuario($pesoUsuario, $alturaUsuario){
+        //     $this->pesoUsuario = $pesoUsuario;
+        //     $this->alturaUsuario = $alturaUsuario;
+        //     $this->imcUsuario = $this->calcularImc();
+        //     $this->categoriaImc = $this->categoriaImc();
+        // }
 
     }
 

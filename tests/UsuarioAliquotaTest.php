@@ -26,6 +26,23 @@
             $this->assertEquals("R$10000", $p3->getRendimentoUsuario());        
         }
 
+        /**
+         * @dataProvider testAliquotaProvider
+         */
+        public function calculaAliquota($nome, $cpf, $renda,$aliquota)
+        {
+           $p4 = new UsuarioAliquota($nome, $cpf, $renda);
+
+           $this->assertEquals($aliquota, $p4->calcularAliquota());        
+        }
+
+        static function testAliquotaProvider(){
+            return [
+                ["Vinicius Victor", "111.111.111-11", 0, 0]
+                
+            ];
+        }
+
       
 
         // public function testVerificarTrue(){
